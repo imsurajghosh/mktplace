@@ -1,0 +1,7 @@
+FROM openjdk:17-jre-alpine
+
+WORKDIR /
+
+ADD target/mktplace-0.0.1-SNAPSHOT.jar mktplace-0.0.1-SNAPSHOT.jar
+
+CMD java -jar mktplace-0.0.1-SNAPSHOT.jar
