@@ -14,13 +14,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Entity
 public class UserInventory {
 
@@ -55,4 +53,17 @@ public class UserInventory {
 
     @Column(name = "is_deleted")
     private boolean isDeleted = false;
+
+    @Override
+    public String toString() {
+        return "UserInventory{" +
+                "id=" + id +
+                ", inventoryId='" + inventoryId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", item=" + item +
+                ", itemId='" + itemId + '\'' +
+                ", purchasedAt=" + purchasedAt +
+                ", isDeleted=" + isDeleted +
+                '}';
+    }
 }

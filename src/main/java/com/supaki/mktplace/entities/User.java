@@ -17,7 +17,6 @@ import lombok.ToString;
 import java.util.List;
 
 @Data
-@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -43,4 +42,13 @@ public class User {
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<AccountDetail> accountDetails;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

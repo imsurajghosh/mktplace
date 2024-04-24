@@ -21,7 +21,6 @@ import lombok.ToString;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
-@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -57,4 +56,16 @@ public class SaleInventory {
 
     @Column(name = "buyer_id")
     private String buyerId;
+
+    @Override
+    public String toString() {
+        return "SaleInventory{" +
+                "id=" + id +
+                ", inventoryId='" + inventoryId + '\'' +
+                ", listingPrice=" + listingPrice +
+                ", updatedAt=" + updatedAt +
+                ", status=" + status +
+                ", buyerId='" + buyerId + '\'' +
+                '}';
+    }
 }
