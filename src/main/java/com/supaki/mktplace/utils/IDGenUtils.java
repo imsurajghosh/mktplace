@@ -10,6 +10,10 @@ public class IDGenUtils {
         return "I" + RandomStringUtils.randomAlphanumeric(SHORT_ID_LENGTH);
     }
 
+    public static String accountIdGenerate() {
+        return "A" + RandomStringUtils.randomAlphanumeric(SHORT_ID_LENGTH);
+    }
+
     public static String userIdGenerate() {
         return "U" + RandomStringUtils.randomAlphanumeric(SHORT_ID_LENGTH);
     }

@@ -6,6 +6,7 @@ import com.supaki.mktplace.entities.SaleInventory;
 import com.supaki.mktplace.entities.UserInventory;
 import com.supaki.mktplace.models.SaleInventoryDTO;
 import com.supaki.mktplace.models.UserInventoryDTO;
+import com.supaki.mktplace.repositories.AccountDetailRepository;
 import com.supaki.mktplace.repositories.PurchaseCounterRepository;
 import com.supaki.mktplace.repositories.SaleInventoryRepository;
 import com.supaki.mktplace.repositories.UserInventoryRepository;
@@ -32,6 +33,9 @@ public class InventoryService {
 
     @Autowired
     private UserInventoryRepository userInventoryRepository;
+
+    @Autowired
+    private AccountDetailRepository accountDetailRepository;
 
     @Autowired
     private PurchaseCounterRepository purchaseCounterRepository;
@@ -93,6 +97,7 @@ public class InventoryService {
 
     @Async
     public void settleWithSeller(UserInventory userInventory, SaleInventory saleInventory) {
+//        List<AccountDetail> accountDetails = accountDetailRepository.findByUserId(userInventory.getUserId());
         // settle for this inventory and sale
     }
 

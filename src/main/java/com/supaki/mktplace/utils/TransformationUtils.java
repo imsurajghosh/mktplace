@@ -1,9 +1,11 @@
 package com.supaki.mktplace.utils;
 
+import com.supaki.mktplace.entities.AccountDetail;
 import com.supaki.mktplace.entities.Item;
 import com.supaki.mktplace.entities.SaleInventory;
 import com.supaki.mktplace.entities.User;
 import com.supaki.mktplace.entities.UserInventory;
+import com.supaki.mktplace.models.AccountDetailDTO;
 import com.supaki.mktplace.models.ItemDTO;
 import com.supaki.mktplace.models.SaleInventoryDTO;
 import com.supaki.mktplace.models.UserDTO;
@@ -29,6 +31,18 @@ public class TransformationUtils {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.STRICT);
         return modelMapper.map(item, ItemDTO.class);
+    }
+
+    public AccountDetailDTO convertEntityToDTO(AccountDetail account) {
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.STRICT);
+        return modelMapper.map(account, AccountDetailDTO.class);
+    }
+
+    public AccountDetail convertDtoToEntity(AccountDetailDTO accountDetailDTO) {
+        modelMapper.getConfiguration()
+                .setMatchingStrategy(MatchingStrategies.STRICT);
+        return modelMapper.map(accountDetailDTO, AccountDetail.class);
     }
 
     public User convertDtoToEntity(UserDTO userDTO) {

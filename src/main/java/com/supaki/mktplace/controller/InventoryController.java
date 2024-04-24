@@ -59,7 +59,7 @@ public class InventoryController {
 
     @GetMapping("/user/{userId}/inventory")
     public List<UserInventoryDTO> getUserInventory(@PathVariable("userId") String userId) {
-        List<UserInventory> userInventories = userInventoryRepository.findByUserId(userId);
+        List<UserInventory> userInventories = userInventoryRepository.findByUserIdAndIsDeletedFalse(userId);
         return userInventories.stream().map(transformationUtils::convertEntityToDTO).collect(Collectors.toList());
     }
 
