@@ -25,8 +25,8 @@ public class AccountDetail {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
 
-    @Column(name = "user_id")
-    private String userId;
+//    @Column(name = "user_id")
+//    private String userId;
 
     @Column(name = "acc_no")
     private String accNo;
