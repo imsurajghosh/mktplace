@@ -48,8 +48,7 @@ public class SaleInventory {
 
     private InventoryStatus status;
 
-    @ManyToOne(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "buyer_id", referencedColumnName = "user_id", insertable = false, updatable = false)
     private User buyer;
 

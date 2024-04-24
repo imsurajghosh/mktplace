@@ -33,14 +33,12 @@ public class User {
 
     @OneToMany(mappedBy = "user",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+            fetch = FetchType.LAZY)
     private List<UserInventory> userInventory;
 
     @OneToMany(mappedBy = "user",
             orphanRemoval = true,
-            fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+            fetch = FetchType.LAZY)
     private List<AccountDetail> accountDetails;
 
     @Override
