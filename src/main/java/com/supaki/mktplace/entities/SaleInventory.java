@@ -31,8 +31,7 @@ public class SaleInventory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inventory_id", referencedColumnName = "inventory_id", insertable = false, updatable = false)
     private UserInventory userInventory;
 

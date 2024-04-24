@@ -44,8 +44,7 @@ public class UserInventory {
     private String itemId;
 
     @OneToOne(fetch = FetchType.LAZY,
-            mappedBy = "userInventory",
-            cascade = CascadeType.ALL)
+            mappedBy = "userInventory")
     private SaleInventory saleInventory;
 
     @Column(name = "purchased_at")

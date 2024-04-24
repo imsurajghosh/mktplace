@@ -64,7 +64,7 @@ public class InventoryService {
         UserInventory userInventory = saleInventory.getUserInventory();
         userInventory.setDeleted(true);
 
-        UserInventory buyerInventory = transformationUtils.copyEntity(userInventory);
+        UserInventory buyerInventory = new UserInventory();
         buyerInventory.setInventoryId(IDGenUtils.inventoryIdGenerate());
         buyerInventory.setUserId(saleInventory.getBuyerId());
         buyerInventory.setItemId(userInventory.getItemId());
@@ -88,6 +88,12 @@ public class InventoryService {
         userInventoryRepository.save(buyerInventory);
         purchaseCounterRepository.save(buyerDailyCounter);
         purchaseCounterRepository.save(buyerMonthlyCounter);
+        settleWithSeller(userInventory, saleInventory);
+    }
+
+    @Async
+    public void settleWithSeller(UserInventory userInventory, SaleInventory saleInventory) {
+        // settle for this inventory and sale
     }
 
     public UserInventory createUserInventory(String userId, String itemId, UserInventoryDTO userInventoryDTO) {

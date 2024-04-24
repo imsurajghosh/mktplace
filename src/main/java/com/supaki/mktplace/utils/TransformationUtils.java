@@ -55,12 +55,6 @@ public class TransformationUtils {
         return modelMapper.map(userInventory, UserInventoryDTO.class);
     }
 
-    public UserInventory copyEntity(UserInventory userInventory) {
-        modelMapper.getConfiguration()
-                .setMatchingStrategy(MatchingStrategies.STRICT);
-        return modelMapper.map(userInventory, UserInventory.class);
-    }
-
     public SaleInventory convertDtoToEntity(SaleInventoryDTO saleInventoryDTO) {
         modelMapper.getConfiguration()
                 .setMatchingStrategy(MatchingStrategies.STRICT);

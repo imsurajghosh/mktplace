@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface UserInventoryRepository extends JpaRepository<UserInventory, Integer> {
 
-    List<UserInventory> findByUserId(String userId);
+    List<UserInventory> findByUserIdAndIsDeletedFalse(String userId);
 
     Optional<UserInventory> findByInventoryId(String inventoryId);
 }
